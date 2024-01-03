@@ -1,0 +1,355 @@
+let const var
+var can be redelcared and reused
+ex: var num = 5; 
+    var num = 10;
+let cannot be redelcared and but can reused
+ex: let num = 5;
+    let num = 10; //gives error
+    num = 10; // does not give error
+const cannot be redelcared and cannot be reused
+also when we use const the value needs to be declared
+const may or may not be declared initially
+ex: const num = 5;
+    const num = 10; //gives error
+    num = 10; //  give error
+
+
+JS is weakly typed and its values are it interprts types by itself
+Variables aer usually camelCase in JS 
+and class is UpperCase
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+DATA TYPES IN JS
+Number  - 1 2 3 
+String  - "z" or 'z'
+Boolean - true/false
+null 
+Undefined : if the value is not deifned the value gonna be Undefined
+object 
+Symbols : used for setting stuff internalls
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+STRING IN JS
+
+
+string is immutable
+when we give two String with a comma on console log we get a space in between
+
+const fname = "zia";
+const lname = "ulla";
+console.log(fname, lname);  // output: zia ulla
+
+string concatination:
+1. using + operator
+ex: const fullname = fname +" "+ lname;
+    console.log(fullname) //output: zia ulla
+
+2. using template literals
+ex: const fullname = `${fname} ${lname}`;
+    console.log(fullname) // output: zia ulla
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+SOME STRING FUNCTIONS/METHODS
+
+lets say for exmaple const sname="zia ulla";
+
+1. sname.toUpperCase();
+2. sname.toLowerCase();
+3. sname.indexOf(a);
+4. sname.trim();
+5. sname.lastIndexOf(a); // can return -1 for not value present
+6. sname.inclue("zia"); // returns true or false
+7. sname.slice(0,5); // 0 index in included and 5 is not included
+8. sname.split(" "); // splits with space and saved in an array
+lot more....
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Numbers
+
+type of -- used to find type of the var
+mathmatical operator : + - * / % 
+
+using priority  and precedence
+1. brackets ()
+2. ** power operator
+3. * / %  (from left to right)
+4. + -  (from left to right)
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+loose and tight equality
+
+let num = 22;
+console.log(num=="22"); // returns true
+because loose eqality doesnot check type of and check only the value.
+It dynamicaly converts the value.
+we use tight equality to solve this challenge.
+
+let num = 22;
+console.log(num==="22"); // returns false
+
+also there is != and !== is not equality loose and tight
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+TYPE CONVERSION
+
+let svalue = "22";
+console.log(Number(svalue)); // returns 22
+
+Number() is used to change string to number
+String() is used to change number to string
+Boolean() is used to change anything to boolean ex: Boolean("") is false (empty string) 
+                            and anything other than blank string is true
+
+
+**any number can be made string but all string cannot be made numbers**
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Arrays
+
+let dishes = ["biryani","palav","pongal"];
+
+
+this is at 0 1 2 place
+
+some funtions of Arrays
+dishes.join(" ")
+dishes.indexOf("biryani")
+dishes.length
+
+dishes.push("kabab") // this is mutable , returns length of the array and joins the new element in existing 
+                        array but doesnot return the array but its length
+
+dishes.pop() // returns the last element and removes that element from the array. the new array will be not 
+                having the last element.
+
+we can combine arrays using spread operator (...array) and concat() method
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Type coercion
+
+how types automaticlly changein JS
+
+let n1=5 let s1="6"
+concat n1 + s1 = "56" //string has higher precedence
+multiply n1 * s1 = 30 //number has higher precedence
+subract n1 - s1 = -1 //number has higher precedence
+
+let n1=5 let s1="hi"
+concat n1 + s1 = "5hi" //string has higher precedence
+multiply n1 * s1 = NaN //number has higher precedence
+subract n1 - s1 = NaN //number has higher precedence
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+CONTROL FLOW IN JS
+for loop
+
+ex:let dishes = ["biryani","palav","pongal"];
+for(let i = 0 ; i < dishes.length ; i++ ){
+    console.log(dishes[i])
+}
+
+while loop
+ex:let i = 0;
+while (i < dishes.length) {
+  console.log(dishes[i]);
+  i++;
+}
+
+do-while loop
+ex:let i = 0;
+do {
+  console.log(i);
+  i++;
+}while (i < 5)
+
+if,else ,else-if
+
+let bud=50000;
+if (bud < 10000) {
+  console.log(bud);
+}
+
+let bud=50000;
+if (bud < 10000) {
+  console.log(bud);
+}else{
+    console.log(bud)
+}
+
+let bud=50000;
+if (bud < 10000) {
+  console.log(bud);
+}else if(bud < 15000){
+    console.log(bud)
+}else{
+    console.log(bud)
+}
+
+ex of true and false in an if condition
+true => true 10 "0" [] {} "hello"
+false => false 0 "" Undefined null
+
+
+break and continue statements
+
+break - ends the loops
+continue - current execution of the loop is skipped
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+LOGICAL OPERATOR
+ || , && , !
+
+ prioties : 
+ 1. NOT
+ 2. AND , OR from left to right
+
+ ternary operator
+ condition?true:false
+
+ ex: let age = 20;
+ const result = age > 18 ? "Qualify":"not-Qualify";
+ console.log(result);
+
+ there is also switch case
+ex:let i = 1;
+switch(i){
+case 1: console.log(i);
+break;
+case 2: console.log(i);
+break;
+case 3: console.log(i);
+break;
+default: console.log(i);
+}
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+FUNCTIONS
+used to execute repeatative code
+written in camelCase
+types:
+1. declarative function
+ex: function addNumbers(){
+        console.log(10+20);
+    }
+2. anonymous function
+ex: let addNumbers = function(){
+        console.log(10+20);
+    }
+
+    let ageCal = function(year,currenYear=2023){
+        return currenYear - year
+    }
+
+    console.log(ageCal(2005,2023))
+3. arrow function
+ex: const addNumbers=()=>{
+        console.log(10+20);
+    }
+
+    let invitation = name => `Welcome ${name}`
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+HIGHER ORDER FUNCTIONS
+
+1.returns either a function
+2. can be used to pass a funtion
+
+
+ex: 
+
+    let upperCase = function (str) {
+  return str.toUpperCase();
+};
+let lowerCase = function (str) {
+  return str.toLowerCase();
+};
+let transform = function (str, func) {
+  return func(str);
+};
+
+console.log(transform("heLLO", upperCase));
+
+ex:
+    
+    let transform = function (str) {
+        return function (name) {
+            return `${name} ${str}`;
+        };
+    };
+
+    console.log(transform("zia")("helloo"));
+
+    and also this is also possible
+
+    let transform = function (str) {
+  return function (name) {
+    return `${name} ${str}`;
+  };
+};
+
+const transformed = transform("zia");
+console.log(transformed("helloo"));
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+IIFE -
+    immediatle invoked funtion expression
+    executed only once
+
+(function(name){
+    console.log(name)
+})("ziya");
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+setTimeOut and setInterval
+
+setTimeOut(func|code , delay , args1 , args2)
+ex:function greeting(name){
+     console.log(`hello ${name}`)
+    }
+
+    setTimeout(greeting,2000,"ziya")
+
+
+setInterval(func|code , delay , args1 , args2)
+ex:function greeting(name){
+     console.log(`hello ${name}`)
+    }
+
+    setInterval(greeting,2000,"ziya")
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+HOISTING**(important topic)
+
+JavaScript Hoisting refers to the process whereby the interpreter appears
+to move the declaration of functions, variables, classes, or imports to 
+the top of their scope, prior to execution of the code.
+
+cannot happen in 
+anonymous function
+
+
+
+
+
+
